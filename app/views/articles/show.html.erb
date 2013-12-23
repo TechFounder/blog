@@ -9,9 +9,21 @@
 </p>
 
 <p>
-  <strong>Discussion:</strong>
-  <%#= @article.discussion %>
+  <strong>Discussions:</strong>
 </p>
+
+<div>
+  <% @article.discussions.each do |discussion| %>
+    <p><%= discussion.comment %></p>
+    <p><%= link_to 'Show', article_discussion_path(@article, discussion) %> |
+    <%= link_to 'Edit', edit_article_discussion_path(@article, discussion) %> |
+    <%= link_to 'Delete', [@article, discussion], method: :delete, data: { confirm: 'Are your sure?' } %></p>
+  <% end %>
+
+  <p>
+    <%= link_to 'New Comment', new_article_discussion_path(@article) %>
+  </p>
+</div>
 
 <% if @article.user == current_user %>
   <%= link_to 'Edit', edit_article_path(@article) %> |

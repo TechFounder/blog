@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
 
-    # Checks if the user is authorized to perform tha action
+    # Checks to see if the user is authorized to perform that action
     def correct_user
       @article = current_user.articles.find_by_id(params[:id])
       redirect_to articles_path, noitce: 'Not authorized to change this Article' if @article.nil?

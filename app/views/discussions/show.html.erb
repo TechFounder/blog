@@ -5,15 +5,15 @@
 
 <p>
   <strong>User:</strong>
-  <%= @discussion.user %>
+  <%= @discussion.user.name %>
 </p>
 
 <p>
   <strong>Article:</strong>
-  <%= @discussion.article %>
+  <%= @discussion.article.title %>
 </p>
 
 <% if @discussion.user == current_user %>
-  <%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+  <%= link_to 'Edit', edit_article_discussion_path(@article, @discussion) %> |
 <% end %>  
-<%= link_to 'Back', discussions_path %>
+<%= link_to 'Back', article_path %>

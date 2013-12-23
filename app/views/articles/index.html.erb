@@ -18,8 +18,8 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= article.content %></td>
-        <td><%#= article.name %></td>
-        <td><%#= comment.count %></td>
+        <td><%= article.user.name %></td>
+        <td><%= article.discussions.count %></td>
         <td><%= link_to 'Show', article %></td>
         <% if article.user == current_user %>
           <td><%= link_to 'Edit', edit_article_path(article) %></td>

@@ -21,7 +21,7 @@
         <td><%= link_to 'Show', discussion %></td>
         <% if discussion.user == current_user %>
           <td><%= link_to 'Edit', edit_discussion_path(discussion) %></td>
-          <td><%= link_to 'Destroy', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Delete', discussion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
